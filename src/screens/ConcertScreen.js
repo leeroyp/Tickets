@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 
-export default class HomeScreen extends Component {
+export default class ConcertScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Profile Screen </Text>
+        <Text> Concert Screen </Text>
       </View>
     );
   }

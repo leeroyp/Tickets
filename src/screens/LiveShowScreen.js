@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 
-export default class HomeScreen extends Component {
+export default class LiveShowScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Profile Screen </Text>
+        <Text> LiveShow Screen </Text>
+    
       </View>
     );
   }
