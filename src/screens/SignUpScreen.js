@@ -17,10 +17,10 @@ import * as Facebook from 'expo-facebook'
 import * as Google from "expo-google-app-auth";
 
 
-class SignUpScreen extends React.Component {
+  class SignUpScreen extends React.Component {
   state = { displayName: '', email: '', password: '', errorMessage: '', loading: false };
   onLoginSuccess() {
-    this.props.navigation.navigate('App');
+    this.props.navigation.navigate('Home');
   }
   onLoginFailure(errorMessage) {
     this.setState({ error: errorMessage, loading: false });

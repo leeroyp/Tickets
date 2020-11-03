@@ -6,36 +6,41 @@ import { createStackNavigator } from 'react-navigation-stack';
 import * as firebase from 'firebase';
 
 import { firebaseConfig } from './config/firebase.js';
-import AuthNavigator from './src/navigation/AuthNavigator';
+// import AuthNavigator from './src/navigation/AuthNavigator';
 import HomeScreen from './src/screens/HomeScreen';
 import AccountScreen from './src/screens/AccountScreen';
-import SigninScreen from './src/screens/SigninScreen';
-import SignupScreen from './src/screens/SignupScreen';
+import SignInScreen from './src/screens/SignInScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
 import BrowseScreen from './src/screens/BrowseScreen';
 import ConcertScreen from './src/screens/ConcertScreen';
-import LiveShowsScreen from './src/screens/LiveShowsScreen';
+import LiveShowScreen from './src/screens/LiveShowScreen';
 import SportsScreen from './src/screens/SportsScreen';
-import TicketScreen from './src/screens/TicketScreens';
+import TicketScreen from './src/screens/TicketScreen';
 
 
 firebase.initializeApp(firebaseConfig);
 
-  const switchNavigator = createSwitchNavigator({
+const loginFlow = createSwitchNavigator({
+  SignUp: SignUpScreen,
+  SignIn: SignInScreen
+})
 
-  loginFlow: createStackNavigator({
-    Signup: SignupScreen,
-    Signin: SigninScreen,
-  }),
+const Home = createStackNavigator({
+  Home: HomeScreen,
+  Concert: ConcertScreen,
+  LiveShow: LiveShowScreen,
+  Sports: SportsScreen
+});
+
+
+
+  const switchNavigator = createSwitchNavigator({
   mainFlow: createBottomTabNavigator({
-    evenCategoryFlow: createStackNavigator({
-      Concert: ConcertScreen,
-      LiveShow: LiveShowsScreen,
-      Sports: SportsScreen
-    }),
-    Account: AccountScreen,
+    Home,
     Browse: BrowseScreen,
-    Home: HomeScreen,
-    Tickets: TicketScreen
+    Tickets: TicketScreen,
+    Account: AccountScreen,
+
   }),
 });
 
@@ -44,15 +49,15 @@ const App = createAppContainer(switchNavigator);
 
 export default App;
 
-export default createAppContainer(
-  createSwitchNavigator(
-    {
-      Auth: AuthNavigator,
-      App: HomeScreen,
-    },
-    {
-      initialRouteName: 'Auth'
-    }
-  )
-);
+// export default createAppContainer(
+//   createSwitchNavigator(
+//     {
+//       Auth: AuthNavigator,
+//       App: HomeScreen,
+//     },
+//     {
+//       initialRouteName: 'Auth'
+//     }
+//   )
+// );
 
