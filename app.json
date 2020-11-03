@@ -16,6 +16,12 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "facebookAutoInitEnabled": true,
+    "facebookScheme":"fb2799451637048656",
+    "facebookAppId":"2799451637048656" ,
+    "facebookDisplayName": "Tixx",
+
+
     "ios": {
       "supportsTablet": true
     },
