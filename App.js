@@ -16,6 +16,8 @@ import ConcertScreen from './src/screens/ConcertScreen';
 import LiveShowScreen from './src/screens/LiveShowScreen';
 import SportsScreen from './src/screens/SportsScreen';
 import TicketScreen from './src/screens/TicketScreen';
+import CompareScreen from './src/screens/CompareScreen';
+
 
 
 firebase.initializeApp(firebaseConfig);
@@ -38,6 +40,7 @@ const Home = createStackNavigator({
   mainFlow: createBottomTabNavigator({
     Home,
     Browse: BrowseScreen,
+    Compare: CompareScreen,
     Tickets: TicketScreen,
     Account: AccountScreen,
 

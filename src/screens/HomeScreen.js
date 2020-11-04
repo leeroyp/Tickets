@@ -1,14 +1,21 @@
-import React, { Component } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import React, { useState,Component } from "react";
+import { Text, View, StyleSheet, Button ,ScrollView} from "react-native";
+import SearchBar from "../components/SearchBar";
+
 
 export default class HomeScreen extends Component {
+  
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text> HomeScreen Screen </Text>
-      </View>
-    );
-  }
+    <>
+      <SearchBar/>
+      <ScrollView>
+      <ResultsList/>
+      </ScrollView>
+    </>
+      
+    )}
 }
 
 const styles = StyleSheet.create({
