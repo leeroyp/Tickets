@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 export default class ProfileScreen extends Component {
   render() {
@@ -16,6 +17,11 @@ export default class ProfileScreen extends Component {
       </View>
     );
   }
+}
+
+ProfileScreen.navigationOptions = {
+  title:'Account',
+  tabBarIcon:<MaterialIcons name="account-circle" size={24} color="black" />
 }
 
 const styles = StyleSheet.create({
