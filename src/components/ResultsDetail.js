@@ -3,10 +3,9 @@ import { View, Image, Text, StyleSheet, Flalist } from "react-native";
 
 const ResultsDetail = ({ result }) => {
   return (
-    <View style={ styles.container}>
-      <Image style={styles.image} source={{ uri: result.image_url }} />
-      <Text style={styles.name} >{result.name}</Text>
-      <Text>{result.rating} Stars, {result.event_detail} </Text>
+    <View style={styles.container}>
+      <Image style={styles.image} source={{uri: result._embedded.attractions[0].images[5].url}}/>
+      <Text style={styles.name}>{result.name}</Text>
     </View>
   );
 };
@@ -18,7 +17,7 @@ const styles = StyleSheet.create({
 
   image: {
     width: 250,
-    height:120,
+    height:150,
     borderRadius: 4,
     marginBottom:5
   },
