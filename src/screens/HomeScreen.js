@@ -3,6 +3,9 @@ import { Text, View, StyleSheet, Button, ScrollView } from "react-native";
 import SearchBar from "../components/SearchBar";
 import useEvents from '../hooks/useEvents'
 import ResultsList from '../components/ResultsList'
+import CardDisplay from '../components/CardDisplay'
+import ModalDisplay from '../components/ModalDisplay'
+import { Divider } from 'react-native-elements';
 import { FontAwesome } from "@expo/vector-icons";
 
 const HomeScreen = () => {
@@ -17,19 +20,22 @@ const filterResultsBySegment =(segment) => {
   })
 }
   return (
-    <View>
+    <>
       <SearchBar 
         term={term} 
         onTermChange={setTerm} 
         onTermSubmit={()=>searchApi(term)} 
       />
-      {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text>We have found {results.length} results</Text>
-
-      <ResultsList results={filterResultsBySegment("Arts & Theatre")} title="Concerts"/>
-      <ResultsList results={filterResultsBySegment("Music")} title="Festivals"/>
-      <ResultsList results={filterResultsBySegment("Sports")} title="Sports" />
-    </View>
+<ScrollView>
+      <ModalDisplay/><ModalDisplay/>
+    
+      <ResultsList results={filterResultsBySegment("Arts & Theatre")} title="Arts & Theatre"/>
+      <Divider />
+      <ResultsList results={filterResultsBySegment("Sports")} title="Sports"/>
+      <Divider  />
+      <ResultsList results={filterResultsBySegment("Music")} title="Concers" />
+  </ScrollView>
+    </>
   );
 };
 
