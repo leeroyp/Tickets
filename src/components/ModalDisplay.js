@@ -50,10 +50,11 @@ const ModalDisplay = () => {
 
 const styles = StyleSheet.create({
   centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
+    flexDirection: 'row',
+    justifyContent:'space-between',
+    alignItems: 'center',
+
+    // marginTop: 10
   },
   modalView: {
     margin: 20,
@@ -71,9 +72,9 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   openButton: {
-    backgroundColor: "#F194FF",
-    borderRadius: 20,
-    padding: 10,
+    backgroundColor: "grey",
+    borderRadius: 15,
+    padding: 5,
     elevation: 2
   },
   textStyle: {
@@ -85,6 +86,8 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center"
   }
+ 
+
 });
 
 export default ModalDisplay;
