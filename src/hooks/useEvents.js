@@ -14,10 +14,7 @@ export default  () => {
           size: 100,
         },
       });
-      // console.log(response.data);
-    // console.log("logging response",response);
-    // console.log("logging response array",response.data._embedded.events[0]._embedded.attractions[0].classifications[0].segment.name);
-
+      console.log('hittttt')
       setResults(response.data._embedded.events);
     } catch (err) {
       setErrorMessage("Something went wrong");

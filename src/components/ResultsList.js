@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  TouchableOpacity,
 } from "react-native";
 import {withNavigation } from "react-navigation"
 import ResultsDetail from "../components/ResultsDetail";
@@ -20,7 +19,7 @@ const ResultsList = ({title, results}) => {
     data={results}
     keyExtractor={(results)=>results.id}
     renderItem={({item}) =>{
-    return <ResultsDetail result={item}/>
+    return <ResultsDetail style={styles.resultDetail} result={item}/>
     }}
     />
 
@@ -38,6 +37,9 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 10,
   },
+resultDetail: {
+  paddingBottom: 30
+}
 });
 
 export default withNavigation(ResultsList);

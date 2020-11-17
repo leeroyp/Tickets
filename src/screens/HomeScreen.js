@@ -5,7 +5,6 @@ import useEvents from '../hooks/useEvents'
 import ResultsList from '../components/ResultsList'
 import ModalDisplay from '../components/ModalDisplay'
 import {FlatListSlider} from 'react-native-flatlist-slider';
-import { Divider } from 'react-native-elements';
 import { FontAwesome } from "@expo/vector-icons";
 
 const HomeScreen = () => {
@@ -32,16 +31,15 @@ const images = [
 {image: 'https://themayfieldseamer.co.uk/media/com_eventbooking/images/thumbs/comedy1.jpg',
   desc:'image four'
 },
-
 ]
 
   return (
     <>
-      {/* <SearchBar 
+      <SearchBar 
         term={term} 
         onTermChange={setTerm} 
         onTermSubmit={()=>searchApi(term)} 
-      /> */}
+      />
       <View style={styles.modalDisplay}>
       <ModalDisplay/>
       <ModalDisplay/>
@@ -51,20 +49,18 @@ const images = [
 <FlatListSlider 
      data={images} 
   />
-      <ResultsList results={filterResultsBySegment("Arts & Theatre")} title="Arts & Theatre"/>
-      <Divider />
-      <ResultsList results={filterResultsBySegment("Sports")} title="Sports"/>
-      <Divider  />
-      <ResultsList results={filterResultsBySegment("Music")} title="Concers" />
+      <ResultsList style={styles.resultView} results={filterResultsBySegment("Arts & Theatre")} title="Arts & Theatre"/>
+      <ResultsList style={styles.resultView} results={filterResultsBySegment("Sports")} title="Sports"/>
+      <ResultsList style={styles.resultView} results={filterResultsBySegment("Music")} title="Concerts" />
   </ScrollView>
     </>
   );
 };
 
-// HomeScreen.navigationOptions = {
-//   title: "Home",
-//   tabBarIcon: <FontAwesome name="home" size={24} color="black" />,
-// };
+HomeScreen.navigationOptions = {
+  title: "Home",
+  tabBarIcon: <FontAwesome name="home" size={24} color="black" />,
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -77,8 +73,12 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     justifyContent:'space-around',
     padding: 10
-    
-      }
+   },
+   resultView:{
+     paddingBottom:15
+   }
+
+
 });
 
 export default HomeScreen;

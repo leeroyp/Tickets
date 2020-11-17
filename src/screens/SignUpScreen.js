@@ -16,6 +16,7 @@ import firebase from 'firebase';
 import * as Facebook from 'expo-facebook'
 import * as Google from "expo-google-app-auth";
 
+const IOS_CLIENT_ID =
 
   class SignUpScreen extends React.Component {
   state = { displayName: '', email: '', password: '', errorMessage: '', loading: false };

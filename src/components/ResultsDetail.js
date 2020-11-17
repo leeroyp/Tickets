@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, Flalist } from "react-native";
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card} from 'react-native-elements'
 
 
 const ResultsDetail = ({ result }) => {
@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   CardStyle:{
-    marginRight:5
+    marginRight:5,
+    paddingBottom: 10
   }
 
 
