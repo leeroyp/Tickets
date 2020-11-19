@@ -1,59 +1,91 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Button, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Button,
+  ScrollView,
+  SafeAreaView,
+} from "react-native";
 import SearchBar from "../components/SearchBar";
-import useEvents from '../hooks/useEvents'
-import ResultsList from '../components/ResultsList'
-import ModalDisplay from '../components/ModalDisplay'
-import {FlatListSlider} from 'react-native-flatlist-slider';
+import useEvents from "../hooks/useEvents";
+import ResultsList from "../components/ResultsList";
+import ModalDisplay from "../components/ModalDisplay";
+import { FlatListSlider } from "react-native-flatlist-slider";
 import { FontAwesome } from "@expo/vector-icons";
 
 const HomeScreen = () => {
   const [term, setTerm] = useState("");
   const [searchApi, results, errorMessage] = useEvents();
-  
-// console.log (results._embedded.attractions[0].classifications[0].segment.name)  
-const filterResultsBySegment =(segment) => {
 
-  return results.filter( result => {
-    return result._embedded.attractions[0].classifications[0].segment.name === segment
-  })
-}
-const images = [
-  {image: 'https://sport.one/content/images/2018/01/2222-18.jpg',
-  desc:'image one'
-},
-{image: 'https://i.insider.com/5e45b2783b62b778762710a4?width=1100&format=jpeg&auto=webp',
-  desc:'image two'
-},
-{image: 'https://res.cloudinary.com/simpleview/image/upload/v1502135153/clients/raleigh/165_3_0333_jpeg_c22ffa95-df55-4156-a8ac-66ed0d6c2512.jpg',
-  desc:'image three'
-},
-{image: 'https://themayfieldseamer.co.uk/media/com_eventbooking/images/thumbs/comedy1.jpg',
-  desc:'image four'
-},
-]
+  // console.log (results._embedded.attractions[0].classifications[0].segment.name)
+  const filterResultsBySegment = (segment) => {
+    return results.filter((result) => {
+      return (
+        result._embedded.attractions[0].classifications[0].segment.name ===
+        segment
+      );
+    });
+  };
+  const images = [
+    {
+      image: "https://sport.one/content/images/2018/01/2222-18.jpg",
+      desc: "image one",
+    },
+    {
+      image:
+        "https://i.insider.com/5e45b2783b62b778762710a4?width=1100&format=jpeg&auto=webp",
+      desc: "image two",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/simpleview/image/upload/v1502135153/clients/raleigh/165_3_0333_jpeg_c22ffa95-df55-4156-a8ac-66ed0d6c2512.jpg",
+      desc: "image three",
+    },
+    {
+      image:
+        "https://themayfieldseamer.co.uk/media/com_eventbooking/images/thumbs/comedy1.jpg",
+      desc: "image four",
+    },
+  ];
 
   return (
-    <>
-      <SearchBar 
-        term={term} 
-        onTermChange={setTerm} 
-        onTermSubmit={()=>searchApi(term)} 
+    <SafeAreaView>
+      <SearchBar
+        term={term}
+        onTermChange={setTerm}
+        onTermSubmit={() => searchApi(term)}
       />
-      <View style={styles.modalDisplay}>
+      {/* <View style={styles.modalDisplay}>
       <ModalDisplay/>
       <ModalDisplay/>
       <ModalDisplay/>
-      </View>
-<ScrollView>
-<FlatListSlider 
-     data={images} 
-  />
-      <ResultsList style={styles.resultView} results={filterResultsBySegment("Arts & Theatre")} title="Arts & Theatre"/>
-      <ResultsList style={styles.resultView} results={filterResultsBySegment("Sports")} title="Sports"/>
-      <ResultsList style={styles.resultView} results={filterResultsBySegment("Music")} title="Concerts" />
-  </ScrollView>
-    </>
+      </View> */}
+      <ScrollView>
+        <FlatListSlider
+          data={images}
+          height={200}
+          indicatorContainerStyle={{ position: "absolute", bottom: 20 }}
+          indicatorActiveColor={"#8e44ad"}
+          indicatorInActiveColor={"#ffffff"}
+        />
+        <ResultsList
+          style={styles.resultView}
+          results={filterResultsBySegment("Arts & Theatre")}
+          title="Arts & Theatre"
+        />
+        <ResultsList
+          style={styles.resultView}
+          results={filterResultsBySegment("Sports")}
+          title="Sports"
+        />
+        <ResultsList
+          style={styles.resultView}
+          results={filterResultsBySegment("Music")}
+          title="Concerts"
+        />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -69,16 +101,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  modalDisplay:{
-    flexDirection:'row',
-    justifyContent:'space-around',
-    padding: 10
-   },
-   resultView:{
-     paddingBottom:15
-   }
-
-
+  modalDisplay: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 10,
+  },
+  resultView: {
+    paddingBottom: 15,
+  },
 });
 
 export default HomeScreen;

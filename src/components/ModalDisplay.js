@@ -11,7 +11,8 @@ import {
 const ModalDisplay = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View style={styles.centeredView}>
+    <>
+    <View style={styles.centeredView} >
       <Modal
         animationType="slide"
         transparent={true}
@@ -36,15 +37,17 @@ const ModalDisplay = () => {
         </View>
       </Modal>
 
-      <TouchableHighlight
+      
+    </View>
+    <TouchableHighlight
         style={styles.openButton}
         onPress={() => {
           setModalVisible(true);
         }}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Compare Prices</Text>
       </TouchableHighlight>
-    </View>
+  </>
   );
 };
 
@@ -53,6 +56,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent:'space-between',
     alignItems: 'center',
+    paddingTop: 100
 
     // marginTop: 10
   },
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: "white",
     borderRadius: 20,
-    padding: 35,
+    padding: 100,
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -73,7 +77,8 @@ const styles = StyleSheet.create({
   },
   openButton: {
     backgroundColor: "grey",
-    borderRadius: 15,
+    borderRadius: 22,
+    height:44,
     padding: 5,
     elevation: 2
   },

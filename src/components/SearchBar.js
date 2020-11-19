@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   background: {
     marginTop: 10,
     backgroundColor: "#F0EEEE",
-    height: 50,
+    height: 30,
     borderRadius: 5,
     marginHorizontal: 15,
     flexDirection:'row',

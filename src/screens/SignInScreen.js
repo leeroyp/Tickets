@@ -96,9 +96,7 @@ const IOS_CLIENT_ID =
       >
         <SafeAreaView style={{ flex: 1 }}>
           <KeyboardAvoidingView style={styles.container} behavior="padding">
-            <Text style={{ fontSize: 32, fontWeight: "700", color: "gray" }}>
-              App Name
-            </Text>
+            
             <View style={styles.form}>
               <TextInput
                 style={styles.input}
