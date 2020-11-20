@@ -22,9 +22,9 @@ export default  () => {
     }
   };
 
-  useEffect(() =>{
-    searchSuggest("")
-  })
+  // useEffect(() =>{
+  //   searchSuggest("")
+  // })
 
   return [searchSuggest, suggestions, errorMessage];
 }

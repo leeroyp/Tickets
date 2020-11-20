@@ -13,6 +13,7 @@ import ResultsList from "../components/ResultsList";
 import ModalDisplay from "../components/ModalDisplay";
 import { FlatListSlider } from "react-native-flatlist-slider";
 import { FontAwesome } from "@expo/vector-icons";
+import BrowseByCategory from "../components/BrowseByCategory";
 
 const HomeScreen = () => {
   const [term, setTerm] = useState("");
@@ -56,11 +57,7 @@ const HomeScreen = () => {
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
-      {/* <View style={styles.modalDisplay}>
-      <ModalDisplay/>
-      <ModalDisplay/>
-      <ModalDisplay/>
-      </View> */}
+      
       <ScrollView>
         <FlatListSlider
           data={images}
@@ -69,21 +66,13 @@ const HomeScreen = () => {
           indicatorActiveColor={"#8e44ad"}
           indicatorInActiveColor={"#ffffff"}
         />
+        <BrowseByCategory/>
         <ResultsList
           style={styles.resultView}
-          results={filterResultsBySegment("Arts & Theatre")}
+          results={results}
           title="Arts & Theatre"
         />
-        <ResultsList
-          style={styles.resultView}
-          results={filterResultsBySegment("Sports")}
-          title="Sports"
-        />
-        <ResultsList
-          style={styles.resultView}
-          results={filterResultsBySegment("Music")}
-          title="Concerts"
-        />
+       
       </ScrollView>
     </SafeAreaView>
   );

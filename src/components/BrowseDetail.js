@@ -1,21 +1,18 @@
 import React from "react";
-import { View, Image, Text, StyleSheet, Flalist,Button } from "react-native";
-import { Card} from 'react-native-elements'
+import { View, Image, Text, StyleSheet,Button } from "react-native";
 
 
-const ResultsDetail = ({ result }) => {
+const ResultsDetail = (props) => {
   return (
-    <Card style={styles.CardStyle}>
     <View style={styles.container}>
-      <Image style={styles.image} source={{uri: result._embedded.attractions[0].images[5].url}}/>
+      <Image style={styles.image} source={require()}/>
       <Text >{result.name}</Text>
       <Text style={styles.Text1}>Sun, Nov 26, 2020 4:50pm</Text>
       <Button title='Find Tickets'/>
     </View>
-    </Card>
   );
 };
- 
+
 const styles = StyleSheet.create({
     container:{
        

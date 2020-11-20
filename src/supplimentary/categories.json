@@ -1,0 +1,22 @@
+[
+    {
+        "categories":[
+            {
+                "title": "Basketball",
+                "src_img": "../Assets/basketball.jpeg"
+            },
+            {
+                "title": "Comedy",
+                "src_img": "./Assets/comedy.jpg"
+            },
+            {
+                "title": "Concerts",
+                "src_img": "../Assets/concerts.jpeg"
+            },
+            {
+                "title": "Football",
+                "src_img": "../Assets/football.jpeg"
+            }
+        ]
+    }
+]

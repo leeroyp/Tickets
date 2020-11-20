@@ -19,7 +19,7 @@ const CompareScreen = () => {
 
 CompareScreen.navigationOptions = {
   title: "Home",
-  tabBarIcon: <FontAwesome name="scale" size={24} color="black" />,
+  tabBarIcon: <FontAwesome name="balance-scale" size={24} color="black" />,
 };
 
 const styles=StyleSheet.create({

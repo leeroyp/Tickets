@@ -11,7 +11,7 @@ export default  () => {
         params: {
           apikey: "",
           keyword: searchTerm,
-          size: 100,
+          size: 20,
         },
       });
       console.log('hittttt')
@@ -21,9 +21,9 @@ export default  () => {
     }
   };
 
-  useEffect(() =>{
-    searchApi("")
-  })
+  // useEffect(() =>{
+  //   searchApi("sports")
+  // })
 
   return [searchApi, results, errorMessage];
 }

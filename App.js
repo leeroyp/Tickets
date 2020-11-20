@@ -22,10 +22,7 @@ import CompareScreen from './src/screens/CompareScreen';
 
 firebase.initializeApp(firebaseConfig);
 
-const loginFlow = createSwitchNavigator({
-  SignUp: SignUpScreen,
-  SignIn: SignInScreen
-})
+
 
 const Home = createStackNavigator({
   Home: HomeScreen,
@@ -38,13 +35,16 @@ const Home = createStackNavigator({
 
   const switchNavigator = createSwitchNavigator({
   mainFlow: createBottomTabNavigator({
-    Home,
+    Home: HomeScreen,
     Browse: BrowseScreen,
     Compare: CompareScreen,
     Tickets: TicketScreen,
     Account: AccountScreen,
-
   }),
+  loginFlow :createSwitchNavigator({
+    SignUp: SignUpScreen,
+    SignIn: SignInScreen
+  })
 });
 
 const App = createAppContainer(switchNavigator);
