@@ -19,7 +19,7 @@ const BrowseScreen = () => {
         onTermSubmit={() => searchSuggest(term2)}
       />
       
-      <Text style={styles.Text}>Popular Near You </Text>
+      <Text style={styles.Text}>Top Categories </Text>
       <BrowseList />
       </View>
     </ScrollView>

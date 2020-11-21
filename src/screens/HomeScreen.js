@@ -14,6 +14,7 @@ import ModalDisplay from "../components/ModalDisplay";
 import { FlatListSlider } from "react-native-flatlist-slider";
 import { FontAwesome } from "@expo/vector-icons";
 import BrowseByCategory from "../components/BrowseByCategory";
+import CategoryList from "../components/CategoryList";
 
 const HomeScreen = () => {
   const [term, setTerm] = useState("");
@@ -66,11 +67,12 @@ const HomeScreen = () => {
           indicatorActiveColor={"#8e44ad"}
           indicatorInActiveColor={"#ffffff"}
         />
-        <BrowseByCategory/>
+        {/* <BrowseByCategory/> */}
+        <CategoryList/>
         <ResultsList
           style={styles.resultView}
           results={results}
-          title="Arts & Theatre"
+         
         />
        
       </ScrollView>

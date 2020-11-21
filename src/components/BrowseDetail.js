@@ -1,14 +1,14 @@
 import React from "react";
-import { View, Image, Text, StyleSheet,Button } from "react-native";
+import { View, Image, Text, StyleSheet,Button, TouchableOpacity} from "react-native";
 
 
 const ResultsDetail = (props) => {
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={require()}/>
-      <Text >{result.name}</Text>
-      <Text style={styles.Text1}>Sun, Nov 26, 2020 4:50pm</Text>
-      <Button title='Find Tickets'/>
+    <View style={styles.item}>
+      <TouchableOpacity onPress={()=> console.log(props.title)}>
+      <Image source={props.imageSource} style={styles.image}/>
+      <Text style={styles.title}>{props.title}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -19,23 +19,19 @@ const styles = StyleSheet.create({
     },
 
   image: {
-    width: 300,
-    height:150,
-    borderRadius: 4,
-    marginBottom:5
+    height: 50,
+    width: 60,
+    borderRadius:10,
+   
   },
-  name:{
-      fontWeight: 'bold',
-      
+  title: {
+    fontSize: 15,
+
   },
-  Text1:{
-    color: "blue", 
-    fontWeight: "bold"
+  item: {
+    padding: 1,
+    marginHorizontal: 4,
   },
-  CardStyle:{
-    marginRight:5,
-    paddingBottom: 10
-  }
 
 
 });
