@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet,Image} from "react-native"
+import { Text, View, StyleSheet,Image, Button} from "react-native"
 
 
 
@@ -7,11 +7,16 @@ const BrowseScreenDisplay = ({suggest}) =>{
 
     return (
         <View style={styles.viewStyle}>
-            <Image style={styles.Image}/>
             <View>
-            <Text style={styles.text1}>{suggest.date}</Text>
-            <Text style={styles.text2}>{suggest.name}</Text>
-            <Text>{suggest.location}</Text>
+            <Image style={styles.Image} style={styles.image} source={{uri: result._embedded.attractions[0].images[5].url}}/>
+            </View>
+            <View>
+            <Text style={styles.text1}>{result.name}</Text>
+            <Text style={styles.text2}>{result.name}</Text>
+            <Text>Sunday, Nov 23 , 2020</Text>
+            </View>
+            <View>
+            <Button title="Find"/>
             </View>
         </View>
     )

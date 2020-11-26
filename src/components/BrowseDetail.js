@@ -1,13 +1,20 @@
-import React from "react";
+import React,{useState} from "react";
 import { View, Image, Text, StyleSheet,Button, TouchableOpacity} from "react-native";
+import {withNavigation } from "react-navigation"
 
 
-const ResultsDetail = (props) => {
+
+const BrowseDetail = ({title, imageSource, navigation}) => {
+const [tittle, setTittle] = useState('')
+
   return (
     <View style={styles.item}>
-      <TouchableOpacity onPress={()=> console.log(props.title)}>
-      <Image source={props.imageSource} style={styles.image}/>
-      <Text style={styles.title}>{props.title}</Text>
+
+      <TouchableOpacity
+      title={tittle}
+       onPress={setTittle, console.log(setTittle)}>
+      <Image source={imageSource} style={styles.image}/>
+      <Text style={styles.title}>{title}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -36,4 +43,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default ResultsDetail;
+export default withNavigation(BrowseDetail);

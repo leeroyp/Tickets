@@ -1,12 +1,12 @@
-import React from 'react';
-import { Text , View , StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import { Text , View , StyleSheet, ScrollView} from 'react-native';
 import BrowseDetail from '../components/BrowseDetail'
 import BrowseByCategory from './BrowseByCategory';
 
+
 const CategoryList = ()=> {
-    const renderItem = {
-        
-    }
+   const [category, setCategory] = useState ("")
+
 
     return ( 
         <View>
@@ -16,7 +16,8 @@ const CategoryList = ()=> {
             <BrowseDetail
             title='Football'
             imageSource= {require('../Assets/football.jpg')}
-            
+            // category={title}
+            // onPress={setCategory}
             />
               <BrowseDetail
             title='Comedy'

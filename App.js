@@ -17,6 +17,7 @@ import LiveShowScreen from './src/screens/LiveShowScreen';
 import SportsScreen from './src/screens/SportsScreen';
 import TicketScreen from './src/screens/TicketScreen';
 import CompareScreen from './src/screens/CompareScreen';
+import ResultsShowScreen from './src/screens/ResultsShowScreen.js';
 
 
 
@@ -42,6 +43,7 @@ const Home = createStackNavigator({
     Account: AccountScreen,
   }),
   loginFlow :createSwitchNavigator({
+    Result: ResultsShowScreen,
     SignUp: SignUpScreen,
     SignIn: SignInScreen
   })

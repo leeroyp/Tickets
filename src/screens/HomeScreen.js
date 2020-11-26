@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import {
-  Text,
-  View,
   StyleSheet,
-  Button,
   ScrollView,
   SafeAreaView,
 } from "react-native";
@@ -13,7 +10,6 @@ import ResultsList from "../components/ResultsList";
 import ModalDisplay from "../components/ModalDisplay";
 import { FlatListSlider } from "react-native-flatlist-slider";
 import { FontAwesome } from "@expo/vector-icons";
-import BrowseByCategory from "../components/BrowseByCategory";
 import CategoryList from "../components/CategoryList";
 
 const HomeScreen = () => {
@@ -67,8 +63,8 @@ const HomeScreen = () => {
           indicatorActiveColor={"#8e44ad"}
           indicatorInActiveColor={"#ffffff"}
         />
-        {/* <BrowseByCategory/> */}
-        <CategoryList/>
+        <CategoryList
+        />
         <ResultsList
           style={styles.resultView}
           results={results}
@@ -102,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default HomeScreen ;
