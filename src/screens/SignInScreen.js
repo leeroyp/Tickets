@@ -17,6 +17,7 @@ import * as Facebook from 'expo-facebook'
 import * as Google from "expo-google-app-auth";
 
 const IOS_CLIENT_ID =
+  "";
 
   class SignInScreen extends React.Component {
   state = { email: '', password: '', errorMessage: '', loading: false };

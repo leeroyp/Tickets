@@ -16,8 +16,6 @@ const CategoryList = ()=> {
             <BrowseDetail
             title='Football'
             imageSource= {require('../Assets/football.jpg')}
-            // category={title}
-            // onPress={setCategory}
             />
               <BrowseDetail
             title='Comedy'

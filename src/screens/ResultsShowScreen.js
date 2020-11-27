@@ -1,15 +1,26 @@
 import React, {useState, useEffect} from "react";
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
-import yelp from '../api/yelp'
+import stubHub from "../api/stubHub";
+import yelp from '../api/stubHub'
 
 const ResultsShowScreen = ({navigation}) => {
     const [result, setResult] = useState(null);
     const id = navigation.getParam('id');
 
     const getResult = async(id) => {
-        const response = await yelp.get (`/${id}`);
+        try{
+        const response = await stubHub.get ("/events"`/${id}`,{
+            params: {
+                apikey: "",
+              },
+        });
+        
         setResult(response.data);
-    };
+
+     } catch (err){
+         
+     }
+    }
 
     useEffect (() => {
         getResult(id);
@@ -29,6 +40,7 @@ const ResultsShowScreen = ({navigation}) => {
           return <Image style={styles.image} source={{uri: item }}/>
       }} 
       />
+      <Text>ResultsShowScreen</Text>
   </View>
   )};
 

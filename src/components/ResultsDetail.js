@@ -1,13 +1,12 @@
 import React from "react";
-import { View, Image, Text, StyleSheet, Flalist,Button, Pressable } from "react-native";
-import { Card} from 'react-native-elements'
-import { Divider } from 'react-native-elements';
+import { View, Image, Text, StyleSheet} from "react-native";
+
 
 
 
 const ResultsDetail = ({ result }) => {
   return (
-    <Pressable onPress={()=> console.log("press press")} style={styles.viewStyle}>
+    <View style={styles.viewStyle}>
         <View style={ styles.view1}>
         <Image style={styles.Image} style={styles.image} source={{uri: result._embedded.attractions[0].images[5].url}}/>
         </View>
@@ -19,7 +18,7 @@ const ResultsDetail = ({ result }) => {
         <View style={styles.view3}>
        
         </View>
-    </Pressable>
+        </View>
 )
 }
 
